@@ -15,11 +15,11 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Deploy Container') {
             steps {
                 sh '''
                 docker rm -f devops-project-1 || true
-                docker run -d --name devops-project-1 -p 8081:80 devops-project-1
+                docker run -d --name devops-project-1 -p 8082:80 devops-project-1
                 '''
             }
         }
